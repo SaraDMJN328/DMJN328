@@ -34,14 +34,6 @@ labs(title= "Female and Male CEO's in Canada by Indsutry")
   tab %>% 
     select(Gender, VALUE, Industry, Unit.of.measure, REF_DATE) %>% 
     filter(Unit.of.measure == "Number") %>%
-<<<<<<< Updated upstream
-    filter(tab, Industry=="Total, all industries")
-  tab %>% 
-    filter(Industry!="Total, all industries") %>% 
-    ("REF_DATE"=="2016") %>%
-    ggplot(.,aes(x=Industry,y=VALUE,fill=Gender)) +
-    geom_bar() 
-=======
     filter(Industry!="Total, all industries") %>%
     filter(REF_DATE=="2016") %>%
     ggplot(.,aes(x=Industry,y=VALUE,fill=Gender)) +
@@ -52,6 +44,6 @@ labs(title= "Female and Male CEO's in Canada by Indsutry")
 
 
 ## So clean those lines up by deleting stuff that is commented out, add in your lines setting colors and titles doing the coord_flip()
->>>>>>> Stashed changes
+
    
   
