@@ -37,7 +37,7 @@ labs(title= "Female and Male CEO's in Canada by Indsutry")
     filter(Industry!="Total, all industries") %>%
     filter(REF_DATE=="2016") %>%
     ggplot(.,aes(x=Industry,y=VALUE,fill=Gender)) +
-    geom_col() +
+    geom_bar(stat = "identity")+
       coord_flip()+
       scale_fill_manual(values=c("hotpink", "deepskyblue2"))+
       labs(title= "Female and Male CEO's in Canada by Indsutry")
