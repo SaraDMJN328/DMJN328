@@ -29,14 +29,16 @@ glimpse(markham7)
 ggplot(markham7, aes(geometry=geometry, fill=FemaleIncome))+geom_sf()
 ggplot(markham7, aes(geometry=geometry, fill=MaleIncome))+geom_sf()
 #adding third variable ish
-markham8 <- gather(markham7, Sex, n, FemaleIncome, MaleIncome)
+markham8 <- gather(markham7, Sex, Average_Income, FemaleIncome, MaleIncome)
 glimpse(markham8)
 
-ggplot(markham8, aes(geometry=geometry, fill=n))+
+ggplot(markham8, aes(geometry=geometry, fill=Average_Income))+
   geom_sf()+
   facet_wrap(~Sex)+
-scale_fill_distiller(palette="RdPu")+
-  labs(title="Average Income in Markham shown by Male and Female")
+scale_fill_distiller(palette="RdPu",name="Average Income")+
+  labs(title="Average Income in Markham shown by Male and Female")+
+  theme_void()
+
   
   
   
